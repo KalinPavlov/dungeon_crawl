@@ -1,15 +1,28 @@
 defmodule DungeonCrawl.Room do
-  alias __MODULE__
   alias DungeonCrawl.Room.Action
+  alias DungeonCrawl.Room.Triggers
+
+  @type t :: %__MODULE__{
+          description: String.t(),
+          actions: list(Action.t()),
+          trigger: Triggers.Exit
+        }
 
   defstruct description: nil,
-            actions: []
+            actions: [],
+            trigger: nil
 
   def all() do
     [
-      %Room{
-        description: "You found a quiet place. Looks safe for a little nap.",
-        actions: [Action.forward(), Action.rest()]
+      %__MODULE__{
+        description: "You can see the light of day. You found the exit!",
+        actions: [Action.forward()],
+        trigger: Triggers.Exit
+      },
+      %__MODULE__{
+        description: "You can see an enemy blocking your path.",
+        actions: [Action.forward()],
+        trigger: Triggers.Enemy
       }
     ]
   end

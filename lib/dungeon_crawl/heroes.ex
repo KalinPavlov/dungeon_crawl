@@ -6,7 +6,7 @@ defmodule DungeonCrawl.Heroes do
       %Character{
         name: "Knight",
         description: "Knight has strong defence and consistent damage.",
-        hit_point: 18,
+        hit_points: 18,
         max_hit_points: 18,
         damage_range: 4..5,
         attack_description: "a sword"
@@ -14,7 +14,7 @@ defmodule DungeonCrawl.Heroes do
       %Character{
         name: "Wizard",
         description: "Wizard has strong attack but low health.",
-        hit_point: 8,
+        hit_points: 8,
         max_hit_points: 8,
         damage_range: 6..10,
         attack_description: "a fireball"
@@ -22,7 +22,7 @@ defmodule DungeonCrawl.Heroes do
       %Character{
         name: "Rogue",
         description: "Rogue has hitgh variability in attack damage.",
-        hit_point: 12,
+        hit_points: 12,
         max_hit_points: 12,
         damage_range: 1..12,
         attack_description: "a dagger"
